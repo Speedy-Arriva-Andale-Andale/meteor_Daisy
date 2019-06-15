@@ -1,0 +1,42 @@
+<head>
+<style>
+body {
+background-repeat: no-repeat;
+background-position: left top;
+margin-right: 200px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<header>
+<img src="herzpfote.png" alt="Image">
+<br>
+<br>
+<h1>Daisy's ToDo List ({{incompleteCount}})</h1>
+<label class="hide-completed">
+<input type="checkbox" />
+Abgeschlossene Aufgaben ausblenden
+</label>
+   {{> loginButtons}}
+
+      {{#if currentUser}}
+
+        <form class="new-task">
+
+          <input type="text" name="text" placeholder="Neue Aufgaben hinzufügen..." />
+
+        </form>
+
+      {{/if}}
+
+</header>
+<ul>
+{{#each tasks}}
+{{> task}}
+{{/each}}
+</ul>
+
+</div>
+</body>
